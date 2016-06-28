@@ -27,7 +27,7 @@ public class HomeController {
     public ResponseEntity<List<Task>> getAll() {
         //List<String> t = new ArrayList<String>();
         //t.add("ddd");
-        
+         
         //List<Task> findByTaskStatus = taskRepository.findByTaskStatus("ACTIVE");
         List<Task> findByTaskStatus = (List<Task>) taskRepository.findAll();
         
