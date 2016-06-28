@@ -16,7 +16,7 @@ public class TaskTest {
     private static CrudRepository repository;
 
     public static void main(String[] args) {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("file:src/main/webapp/WEB-INF/spring-config.xml");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("file:src/main/webapp/WEB-INF/springrest-servlet.xml");
         repository = context.getBean(TaskRepository.class);
 
         createEmployee(6, "Task1", "Task1 Description", "MEDIUM", "ACTIVE");
