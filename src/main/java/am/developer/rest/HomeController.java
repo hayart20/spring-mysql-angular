@@ -6,10 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/mytaskrest")
 public class HomeController {
@@ -18,9 +20,10 @@ public class HomeController {
     TaskRepository taskRepository;
     
     @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String home() {
-        System.out.println("barevner");
-        return "index";
+    public ResponseEntity<String> home() {
+        System.out.println("barev");
+        return new ResponseEntity<String>("bababa", HttpStatus.OK);
+        //"{ \"id\":172,\"content\":\"Hello, World!\"}";
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)//, headers = {"Accept=text/xml, application/json"})
